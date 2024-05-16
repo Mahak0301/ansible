@@ -1,6 +1,6 @@
 ---
 - name: First Basic Playbook
-  hosts: all 
+  hosts:  localhost
   tasks:
   - name: Test Connectivity
     ping: 
