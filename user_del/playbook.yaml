@@ -1,0 +1,13 @@
+---
+- name: User management 
+  hosts: all
+  tasks:
+    - name: Create User
+      user:
+        name: test
+        comment: create user with ansible
+        home: /home/test #creates this by default
+        shell: /bin/bash
+        group: test_group
+        state: absent
+        remove: yes #removes associated home directory,etc. 
