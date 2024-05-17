@@ -1,0 +1,13 @@
+---
+- name: Run Script
+  hosts: all
+  tasks:
+    - name: copy test.sh to remote
+      copy:
+        src: /home/ansible/ansible/run_script/test.sh
+        dest: /home/ansible/test.sh
+        owner: ansible
+        group: ansible
+        mode: u+rwx 
+    - name: Run a script
+      shell: /home/ansible/test.sh
