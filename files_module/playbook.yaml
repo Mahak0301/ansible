@@ -9,3 +9,8 @@
         owner: root
         group: root
         mode: 770
+
+    - name: Create a directory
+      file:
+        path: /home/ec2-user/ansible_dir
+        state: directory
