@@ -1,0 +1,9 @@
+---
+- name: Run Script
+  hosts: all
+  tasks:
+    - name: remove cron job
+      cron:
+        name: Run test.sh
+        state: absent
+        user: ansible
