@@ -1,0 +1,10 @@
+---
+- name: Run Script
+  hosts: all
+  tasks:
+    - name: disable cron job
+      cron:
+        name: Run test.sh
+        user: ansible
+        job: /home/ansible/test.sh
+        disabled: yes
