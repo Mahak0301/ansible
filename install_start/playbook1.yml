@@ -1,15 +1,17 @@
 --- 
 - name: Install and start nginx
   hosts: localhost
+  vars:
+    - app: nginx
   tasks: 
   - name: install nginx
     yum:
-      name: nginx
+      name: "{{ app }}"
       state: present
     tags: install
   - name: start nginx
     service:
-      name: nginx
+      name: "{{ app }}"
       state: started
       enabled: true
     tags: start
