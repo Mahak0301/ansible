@@ -1,0 +1,12 @@
+---
+- name: Download file using URL 
+  hosts: Node1
+
+  tasks:
+    - name: get URl
+      get_url:
+        url: https://www.python.org/ftp/python/3.10.0/Python-3.10.0.tgz 
+        dest: /home/ansible
+        owner: ansible
+        group: ansible
+        mode: u+x
