@@ -9,5 +9,8 @@
         owner: ansible
         group: ansible
         mode: u+rwx 
-    - name: Run a script
-      shell: /home/ansible/test.sh
+    - name:   Change directory first and then Run a script
+      shell: ./test.sh >> test.log
+      args:
+        chdir: /home/ansible
+        creates: test.log
