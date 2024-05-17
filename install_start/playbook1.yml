@@ -6,8 +6,10 @@
     yum:
       name: nginx
       state: present
+    tags: install
   - name: start nginx
     service:
       name: nginx
       state: started
       enabled: true
+    tags: start

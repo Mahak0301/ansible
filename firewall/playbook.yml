@@ -1,0 +1,15 @@
+---
+- name: Firewall  
+  hosts: Node1
+  become: true
+  tasks:
+    - name: Enable a service in firewall
+      firewalld:
+        port: 80/tcp
+        permanent: true
+        state: enabled
+
+    - name: Reload Firewall
+      service:
+        name: firewalld
+        state: reloaded
