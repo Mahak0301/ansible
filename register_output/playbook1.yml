@@ -6,7 +6,10 @@
     shell: cat /etc/hosts
     become: true
     register: result
-  - name :  Register output
+  - name:  Register output
+    debug: msg="{{ group_names }}"
+  - name: register result
     debug:
       var: result
+      
      
