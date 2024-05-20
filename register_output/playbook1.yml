@@ -1,0 +1,12 @@
+---
+- name: Store output of a task(Register Output)
+  hosts: Node1
+  tasks:
+  - name: check /etc/hosts
+    shell: cat /etc/hosts
+    become: true
+    register: result
+  - name :  Register output
+    debug:
+      var: result
+     

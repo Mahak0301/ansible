@@ -14,3 +14,7 @@
       args:
         chdir: /home/ansible
         creates: test.log
+      register: result
+    - name: print output
+      debug: 
+        var: result

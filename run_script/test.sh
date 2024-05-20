@@ -1,3 +1,3 @@
 #!/bin/bash
-echo "Hello"
+echo "Hello $(date)"
 touch ./script_test.txt
