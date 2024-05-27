@@ -1,0 +1,8 @@
+---
+- name: print facts for servers
+  hosts: Node1
+
+  tasks:
+    - name: print server info
+      debug:
+        var: ansible_facts
