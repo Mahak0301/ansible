@@ -1,0 +1,21 @@
+--- 
+- name: Install and start nginx
+  hosts: localhost
+  vars:
+    - app: nginx
+  tasks: 
+  - name: install nginx
+    yum:
+      name: "{{ item }}"
+      state: present
+    tags: install
+  - name: start nginx
+    service:
+      name: "{{ item }}"
+      state: started
+      enabled: true
+    tags: start
+  loop:
+    - httpd
+    - nginx
+    - aws-cli

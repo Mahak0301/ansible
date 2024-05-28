@@ -1,0 +1,19 @@
+---
+- name: create multiple users with loop
+  hosts: all
+  vars:
+    - apps: [yum,httpd,telnet,vim]
+  tasks:
+    #- name: create user
+    #  user:
+    #   name: "{{ item }}"
+    #    shell: /bin/bash
+    #  loop:
+    #    - A
+    #    - B
+    #    - C
+    - name: install packages
+      yum:
+        name: "{{ item }}"
+        state: present
+      with_items: "{{ apps }}"
